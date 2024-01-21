@@ -1,4 +1,8 @@
 # vue-manage-main
+## 登录
+项目本来是没打算写登录界面的，本来框架有就没有删除，所以大家登录的时候
+用户名：admin
+密码： admin
 
 ## Project setup
 ```

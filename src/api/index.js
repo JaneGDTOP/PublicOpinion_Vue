@@ -1,5 +1,5 @@
 // 封装好的axios
-import request from "@/utils/request"
+import request from '@/utils/request'
 
 // 定义接口
 export const getData = () => {
@@ -17,7 +17,7 @@ export const updateUser = (data) => {
 }
 // 新增用户
 export const createUser = (data) => {
-  return request.post('/user/add', data);
+  return request.post('/user/add', data)
 }
 
 export const deleteUser = (data) => {

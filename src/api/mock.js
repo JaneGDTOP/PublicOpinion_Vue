@@ -14,6 +14,6 @@ Mock.mock('/api/user/deleteUser', 'post', user.deleteUser)
 // 批量删除
 Mock.mock('/api/user/batchRemove', 'post', user.batchremove)
 // 更新 也就是修改用户
-Mock.mock('/api/user/updateUser', 'post',user.updateUser)
+Mock.mock('/api/user/updateUser', 'post', user.updateUser)
 // 判断用户权限
-Mock.mock('/api/permission/getMenu',permission.getMenu)
+Mock.mock('/api/permission/getMenu', permission.getMenu)

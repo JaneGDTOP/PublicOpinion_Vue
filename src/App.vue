@@ -7,8 +7,8 @@
 
 <script>
 export default {
-  name: "my-app",
-};
+  name: 'my-app'
+}
 </script>
 
 <style lang='less'>

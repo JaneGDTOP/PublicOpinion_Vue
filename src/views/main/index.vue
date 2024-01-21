@@ -31,7 +31,7 @@ export default {
     CommonAside,
     CommonHeader,
     CommonTag
-  },
+  }
 
 }
 </script>

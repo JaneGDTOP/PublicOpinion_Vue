@@ -11,42 +11,42 @@ export default {
           menu: [
             {
               path: '/home',
-              name: 'home', //命名路由
+              name: 'home', // 命名路由
               label: '首页',
               icon: 's-home',
               url: 'home/index.vue'
             },
             {
               path: '/dataset',
-              name: 'dataset', //命名路由
+              name: 'dataset', // 命名路由
               label: '数据集展示',
               icon: 's-home',
               url: 'dataset/index.vue'
             },
             {
               path: '/extraction',
-              name: 'extraction', //命名路由
+              name: 'extraction', // 命名路由
               label: '事件抽取',
               icon: 's-home',
               url: 'extraction/index.vue'
             },
             {
               path: '/relation',
-              name: 'relation', //命名路由
+              name: 'relation', // 命名路由
               label: '关系抽取',
               icon: 's-home',
               url: 'relation/index.vue'
             },
             {
               path: '/fusion',
-              name: 'fusion', //命名路由
+              name: 'fusion', // 命名路由
               label: '表征融合',
               icon: 's-home',
               url: 'fusion/index.vue'
             },
             {
               path: '/knowledge',
-              name: 'knowledge', //命名路由
+              name: 'knowledge', // 命名路由
               label: '知识图谱',
               icon: 's-home',
               url: 'knowledge/index.vue'
@@ -101,6 +101,5 @@ export default {
         }
       }
     }
-
   }
 }

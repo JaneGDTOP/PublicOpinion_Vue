@@ -12,6 +12,7 @@
         <span class="el-dropdown-link">
             <img class='userImg' src='@/assets/images/user.png'/>
         </span>
+      <!-- eslint-disable-next-line vue/no-deprecated-slot-attribute -->
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>个人中心</el-dropdown-item>
         <el-dropdown-item command="logout">退出</el-dropdown-item>
@@ -22,30 +23,30 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import { mapState } from 'vuex'
 import Cookie from 'js-cookie'
 export default {
   name: 'CommonHeader',
   computed: {
     ...mapState({
-      tabsList: state => state.tab.tabsList,
-    }) 
+      tabsList: state => state.tab.tabsList
+    })
   },
   methods: {
     handleMenu () {
-      //控制折叠与展开 分发一个action
+      // 控制折叠与展开 分发一个action
       this.$store.dispatch('collapse_menu')
     },
-    //退出函数 
+    // 退出函数
     handleCommand (command) {
-      //要将cookies中存储的token删除掉
-      //这里command是一个标识
-      //这里退出会有一个bug 就是cookie里面存储的跟用户相关的所有东西是否都要删除 不然就暴露了
-      //清除所有的cookie
+      // 要将cookies中存储的token删除掉
+      // 这里command是一个标识
+      // 这里退出会有一个bug 就是cookie里面存储的跟用户相关的所有东西是否都要删除 不然就暴露了
+      // 清除所有的cookie
       if (command === 'logout') {
         Cookie.remove('token')
-        //删除之后 要返回登录界面 重新登录
-        //同时清除menu
+        // 删除之后 要返回登录界面 重新登录
+        // 同时清除menu
         Cookie.remove('menu')
         this.$router.push('/login')
       }

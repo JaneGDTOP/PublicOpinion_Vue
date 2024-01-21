@@ -8,35 +8,35 @@ const routes = [
     component: Main,
     // 重定向 可以设置默认路径 也就是将根路径重定向到/home的路径下
     // 主路由的名字
-    name:'Main',
+    name: 'Main',
     redirect: '/home',
     children: [
-  // 后端接口根据权限进入不同导航页面 mock接口返回
-  //     {
-  //       path: 'home',
-  //       name: 'home',
-  //       component: Home,
-  //     },
-  //     {
-  //       path: 'user',
-  //       name: 'user',
-  //       component: User,
-  //     },
-  //     {
-  //       path: 'mall',
-  //       name: 'mall',
-  //       component: Mall
-  //     },
-  //     {
-  //       path: 'page1',
-  //       name: 'page1',
-  //       component: PageOne
-  //     },
-  //     {
-  //       path: 'page2',
-  //       name: 'page2',
-  //       component: PageTwo
-  //     }
+      // 后端接口根据权限进入不同导航页面 mock接口返回
+      //     {
+      //       path: 'home',
+      //       name: 'home',
+      //       component: Home,
+      //     },
+      //     {
+      //       path: 'user',
+      //       name: 'user',
+      //       component: User,
+      //     },
+      //     {
+      //       path: 'mall',
+      //       name: 'mall',
+      //       component: Mall
+      //     },
+      //     {
+      //       path: 'page1',
+      //       name: 'page1',
+      //       component: PageOne
+      //     },
+      //     {
+      //       path: 'page2',
+      //       name: 'page2',
+      //       component: PageTwo
+      //     }
     ]
   },
   {

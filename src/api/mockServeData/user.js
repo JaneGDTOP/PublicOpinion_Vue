@@ -63,11 +63,11 @@ export default {
     console.log(JSON.parse(config.body))
     List.unshift({
       id: Mock.Random.guid(),
-      name: name,
-      addr: addr,
-      age: age,
-      birth: birth,
-      sex: sex
+      name,
+      addr,
+      age,
+      birth,
+      sex
     })
     return {
       code: 20000,
@@ -119,14 +119,15 @@ export default {
    */
   updateUser: config => {
     const { id, name, addr, age, birth, sex } = JSON.parse(config.body)
-    const sex_num = parseInt(sex)
+    const sexNum = parseInt(sex)
+    // eslint-disable-next-line array-callback-return
     List.some(u => {
       if (u.id === id) {
         u.name = name
         u.addr = addr
         u.age = age
         u.birth = birth
-        u.sex = sex_num
+        u.sex = sexNum
         return true
       }
     })

@@ -11,11 +11,13 @@
       <h3>{{isCollapse ? '后台' : '通用后台管理系统'}}</h3>
       <el-menu-item @click="clickMenu(item)" v-for="item in noChildren" :key="item.name" :index="item.name">
         <i :class="`el-icon-${item.icon}`"></i>
+         <!-- eslint-disable-next-line vue/no-deprecated-slot-attribute -->
         <span slot="title">{{ item.label }}</span>
       </el-menu-item>
       <el-submenu v-for="item in hasChildren" :key="item.label" :index="item.label">
-        <template slot="title">
+        <template v-slot:title>
           <i :class="`el-icon-${item.icon}`"></i>
+          <!-- eslint-disable-next-line vue/no-deprecated-slot-attribute -->
           <span slot="title">{{ item.label }}</span>
         </template>
         <el-menu-item-group  v-for="subItem in item.children" :key="subItem.name" >
@@ -44,19 +46,19 @@ export default {
     menuData () {
       return JSON.parse(Cookie.get('menu')) || this.$store.state.tab.menu
     },
-    //根据children属性来分开是否有二级菜单
-    //无二级菜单
+    // 根据children属性来分开是否有二级菜单
+    // 无二级菜单
     noChildren () {
-      return this.menuData.filter( item => !item.children)
+      return this.menuData.filter(item => !item.children)
     },
-    //有二级菜单
+    // 有二级菜单
     hasChildren () {
-      return this.menuData.filter( item => item.children)
+      return this.menuData.filter(item => item.children)
     },
-    //是否折叠
+    // 是否折叠
     isCollapse () {
       return this.$store.state.tab.isCollapse
-    },
+    }
   },
   methods: {
     mounted () {
@@ -72,14 +74,14 @@ export default {
     clickMenu (item) {
       // 当页面的路由与跳转的路由不一致的时候才允许跳转 $route是当前路由
       if (this.$route.path !== item.path && !(this.$route.path === '/home' && (item.path === '/'))) {
-          // 可以传如字符串 也可以传入对象 也可以命名路由name属性 params和query参数 对象形式的参数支持name属性  path需要在路径后面拼接
-          this.$router.push(item.path)
+        // 可以传如字符串 也可以传入对象 也可以命名路由name属性 params和query参数 对象形式的参数支持name属性  path需要在路径后面拼接
+        this.$router.push(item.path)
       }
       // console.log(item)
       // 可以获得点击的路由 跳转的时候 派发一个action 同时传过去一个载荷
-      this.$store.dispatch('unpdateTabslist',item)
+      this.$store.dispatch('unpdateTabslist', item)
     }
-  },
+  }
 }
 </script>
 

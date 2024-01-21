@@ -44,10 +44,10 @@ router.beforeEach((to, from, next) => {
   // 但是刚开始未登录且在登录页面的时候 就会陷入死循环
   if (!token && to.name !== 'login') {
     // 说明没有登录 返回登录页面
-    next({name : 'login'})
+    next({ name: 'login' })
   } else if (token && to.name === 'login') {
     // token存在 说明已经登录 此时跳转首页  不能再登录 需要退出登录 才能重新登录
-    next({name : 'home'})
+    next({ name: 'home' })
   } else {
     next()
   }

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>知识图谱展示</h1>
     <el-card class="box-card">
       <div class="myDiv">
         <el-row>

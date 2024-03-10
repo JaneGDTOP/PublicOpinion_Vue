@@ -28,5 +28,9 @@ module.exports = {
         "vue"
     ],
     "rules": {
+        "space-before-function-paren": 0,
+        'quotes': 'off',
+        'semi': 'off',
+        'comma-dangle': 'off'
     }
 }

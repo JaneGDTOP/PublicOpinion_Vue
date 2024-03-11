@@ -4,10 +4,10 @@ module.exports = defineConfig({
   lintOnSave: true, // 关闭eslint的校验
   // 可以在这里配置跨域proxy 查看官网配置 同时也可以用cors
   devServer:{
-    // host: 'localhost',
-    // port: 8080,
-    host: '172.20.137.248',
-    port: 8088,
+    host: 'localhost',
+    port: 8080,
+    // host: '172.20.137.248',
+    // port: 8088,
     proxy: {
       '/api':{
         target:'http://127.0.0.1:5000/',

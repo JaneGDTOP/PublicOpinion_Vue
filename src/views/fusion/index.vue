@@ -112,9 +112,9 @@ export default {
 }
 
 .image {
-  width: 500px;
+  width: 350px;
   /* 设置图片宽度 */
-  height: 400px;
+  height: 220px;
   /* 设置图片高度 */
 }
 

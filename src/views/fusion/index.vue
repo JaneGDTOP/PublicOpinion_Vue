@@ -33,7 +33,7 @@
 
 <script>
 import axios from 'axios';
-
+import { searchPicture } from '@/utils/interface'
 export default {
   data() {
     return {
@@ -49,7 +49,8 @@ export default {
       }
       if (this.result) this.result = []; // 添加此行创建空数组
       var vm = this; // 保存组件实例的引用
-      axios.post('http://127.0.0.1:5000/api/search', { query: this.input })
+      searchPicture({ query: this.input })
+      // axios.post('http://127.0.0.1:5000/api/search', { query: this.input })
         .then(response => {
           // 处理响应结果
           // console.log(response.data);
@@ -89,7 +90,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .t2i-container {
   display: flex;
   flex-direction: column;

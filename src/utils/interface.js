@@ -5,6 +5,7 @@ export const getDataList = () => request.get('/getDataList')
 
 // 发送
 export const sendEvent = (data) => {
+  console.log(data)
   return request.post('/sendEvent', data)
 }
 

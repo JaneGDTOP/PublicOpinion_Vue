@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import { searchPicture } from '@/utils/interface'
 export default {
   data() {
@@ -58,7 +58,6 @@ export default {
             var value = response.data[key];
             // 在这里处理每个属性的值
             console.log(key, value);
-            // 输出结果"result" 
             // "resources/Result/LOCAL1658392121409AQZKGAWE7K.jpg 0.14738580584526062
             // resources/Result/LOCAL16596980070065Q0QBGRQKS.jpg 0.1394435465335846
             // resources/Result/LOCAL202206011637000393774478684.jpg 0.1284731924533844

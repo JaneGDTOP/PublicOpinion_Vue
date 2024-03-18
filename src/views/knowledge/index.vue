@@ -15,6 +15,7 @@
 <script>
 import Display from './knowledge-display'
 export default {
+  name: 'my-knowledge',
   components: {
     Display
   },

@@ -68,6 +68,13 @@ export default {
                   label: '页面2',
                   icon: 'setting',
                   url: 'page/PageTwo.vue'
+                },
+                {
+                  path: '/textEE',
+                  name: 'textEE',
+                  label: 'textEE',
+                  icon: 'setting',
+                  url: 'page/textEE.vue'
                 }
               ]
             }

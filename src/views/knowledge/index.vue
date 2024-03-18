@@ -24,6 +24,7 @@ export default {
     }
   },
   mounted () {
+    console.log('erewr')
   },
   methods: {
   }

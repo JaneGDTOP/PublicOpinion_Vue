@@ -250,19 +250,19 @@ export default {
     }
   },
   arrows: true,
-  initialCypher: 'MATCH p=()-[r:entity]->() RETURN p LIMIT 25',
+  initialCypher: 'MATCH p=()-[r:entity]->() RETURN p LIMIT 300',
   option: [
     {
-      value: 'MATCH (n:entity) RETURN n LIMIT 25',
-      label: '检索前25个实体节点'
+      value: 'MATCH (n:entity) RETURN n LIMIT 300',
+      label: '检索前300个实体节点'
     },
     {
-      value: 'MATCH (n:sentence) RETURN n LIMIT 2',
-      label: '检索前25个实体节点'
+      value: 'MATCH (n:sentence) RETURN n LIMIT 100',
+      label: '检索100个实体节点'
     },
     {
-      value: 'MATCH p = (s1:sentence)-[r]-() RETURN p LIMIT 10',
-      label: '检索前2个实体节点'
+      value: 'MATCH p = (s1:sentence)-[r]-() RETURN p LIMIT 100',
+      label: '检索前100个实体节点'
     }
   ]
 }

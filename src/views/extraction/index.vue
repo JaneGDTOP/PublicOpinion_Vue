@@ -1,79 +1,124 @@
 <template>
   <div class="container">
-    <!-- <div class="top">
+    <div class="top">
       <el-card class="dataset">
-        <div class="text item">
-          <el-table :data="tableData" border style="width: 100%">
-            <el-table-column prop="data" label="Data" width="860">
-            </el-table-column>
-            <el-table-column prop="name" label="Owner" width="180">
-            </el-table-column>
-            <el-table-column prop="date" label="开始时间">
-            </el-table-column>
-            <el-table-column label="操作">
-              <template slot-scope="scope">
-                <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-                <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-              </template>
-            </el-table-column>
-          </el-table>
-        </div>
+        <div style="display: flex; align-items: center;">
+            <div class="rounded-box">
+                <span>Data</span>
+              </div>
+            <el-input v-model="input" placeholder="请输入事件的文本" style="width: 500px;"></el-input>
+            <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/"
+                       :on-preview="handlePreview" :on-remove="handleRemove" style="margin-left: 40px;">
+              <el-button  type="primary" style="height: 40px;">上传图片</el-button>
+            </el-upload>
+            <el-button  type="primary" style="height: 40px; margin-left: 40px;">开始抽取</el-button>
+          </div>
+          <!-- <el-divider style="height: 30px;"></el-divider> -->
       </el-card>
-    </div> -->
-    <div class="eventcontainer">
-      <div class="event">
-        <div class="left-half">
-          <el-card class="box-card1">
-            <span class="text1">样本信息</span><br />
-            <span class="text">文本</span>
-            <div>
-              <el-input v-model="input" placeholder="请输入内容"></el-input>
-              <span class="text">图片</span>
-              <!-- <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/"
-                :on-preview="handlePreview" :on-remove="handleRemove" :file-list="fileList" list-type="picture">
-                <el-button size="small" type="primary">点击上传</el-button>
-                <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-              </el-upload> -->
-              <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/"
-                :on-preview="handlePreview" :on-remove="handleRemove" :file-list="fileList" list-type="picture">
-                <el-button size="small" type="primary">点击上传</el-button>
-                <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-              </el-upload>
-              <el-button type="primary" plain @click="send" class="button">发送</el-button>
+    </div>
+    <div class="event-container">
+        <div class="event">
+            <div class="left-half" style="margin-right: 20px;">
+              <div>
+                <el-card class="box-card1">
+                    <span class="text1">样本信息</span>
+                    <el-divider></el-divider>
+                    <div>
+                      <!-- <el-divider></el-divider> -->
+                      <div>
+                      <span class="text" style="font-size: 16px;">文本</span>
+                      <span class="text" style="margin-left: 20px; color: #99a9bf;">{{input}}</span><br/>
+                        </div>
+                    <div style="margin-top: 18px;">
+                        <span class="text" style="font-size: 16px;vertical-align: middle;">图片</span>
+                      <el-image
+                        style="width: 80px; height: 80px; margin-left: 20px; vertical-align: middle;"
+                        :src="url"
+                        :fit="fit"></el-image>
+                        <el-image
+                        style="width: 80px; height: 80px; margin-left: 20px; vertical-align: middle;"
+                        :src="url"
+                        :fit="fit"></el-image>
+                        <el-image
+                        style="width: 80px; height: 80px; margin-left: 20px; vertical-align: middle;"
+                        :src="url"
+                        :fit="fit"></el-image>
+                        </div>
+                      
+                    </div>
+                  </el-card>
+              </div>
+              
+              <div style="margin-top: 20px; height: 400px;">
+                <el-card class="box-card1">
+                  <span class="text1">触发词信息</span>
+                  <el-divider></el-divider>
+                  <el-row>
+                    <el-col :span="24">
+                      <el-form label-position="left" inline class="demo-table-expand">
+                        <el-form-item label="触发词">
+                          <span>conference</span>
+                        </el-form-item>
+                        <el-form-item label="事件类型">
+                          <span>Contact:Meet</span>
+                        </el-form-item>
+                        <el-form-item label="事件类型描述" style="white-space: nowrap;">
+                            <span>it occurs when two or more people interact</span>
+                        </el-form-item>
+                      </el-form>
+                    </el-col>
+                  </el-row>
+                </el-card>
+              </div>
             </div>
-          </el-card>
-          <div>
-            <el-card class="box-card1">
-              <span class="text1">触发词信息</span>
+            <div class="right-half" >
+              <el-card class="box-card1">
+                <span class="text1">论元信息</span>
+                <el-divider></el-divider>
+                <div style="width: 100%;">
+                    <div>
+                      <el-row>
+                        <el-col :span="24">
+                          <el-form label-position="left" inline class="demo-table-expand">
+                            <el-form-item label="论元1">
+                              <span>New York</span>
+                            </el-form-item>
+                            <el-form-item label="论元角色">
+                              <span>Place</span>
+                            </el-form-item>
+                            <el-form-item label="角色描述">
+                              <span>[Participant] met face-to-face at [Place]</span>
+                            </el-form-item>
+                          </el-form>
+                        </el-col>
+                      </el-row>
+                      </div>
+                      <div style="margin-top: 20px;">
+                        <el-row>
+                            <el-col :span="24">
+                              <el-form label-position="left" inline class="demo-table-expand">
+                                <el-form-item label="论元2">
+                                  <span>Hassan Rouhani</span>
+                                </el-form-item>
+                                <el-form-item label="论元角色">
+                                  <span>Entity</span>
+                                </el-form-item>
+                                <el-form-item label="角色描述">
+                                  <span>[Participant] met face-to-face at [Place]</span>
+                                </el-form-item>
+                              </el-form>
+                            </el-col>
+                          </el-row>
+                      </div>
+                      <div style="margin-top: 59px;">
+                        </div>
 
-            </el-card>
+                </div>
+              </el-card>
+            </div>
           </div>
         </div>
-        <div class="right-half">
-          <el-card class="box-card1">
-            <span class="text1">论元信息</span>
-            <el-table :data="tableData" style="width: 100%">
-              <el-table-column>
-                <template slot-scope="props">
-                  <el-form label-position="left" inline class="demo-table-expand">
-                    <el-form-item label="触发词">
-                      <span>obama, Michelle</span>
-                    </el-form-item>
-                    <el-form-item label="角色分类">
-                      <span>spouse</span>
-                    </el-form-item>
-                    <el-form-item label="角色描述">
-                      life在该事件类创中的含义
-                    </el-form-item>
-                  </el-form>
-                </template>
-              </el-table-column>
-            </el-table>
-          </el-card>
-        </div>
-      </div>
-
-    </div>
+      
 
   </div>
 </template>
@@ -92,6 +137,7 @@
           date: '2016-05-02'
         }],
         input: '',
+        url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
         fileList: [{ name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100' }]
       }
     },
@@ -119,6 +165,21 @@
 </script>
 
 <style>
+ .rounded-box {
+  height: 40px;
+  width: 40px;
+  background-color: #409EFF;
+  margin-right: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rounded-box span {
+  font-size: 16px;
+  color: white;
+}
   .text1 {
     font-size: 16px;
   }
@@ -151,24 +212,23 @@
   }
 
   .top {
-    height: 230px;
+    height: 100px;
   }
-
-  .eventcontainer {
-    flex: 1;
+  .event-container {
+      flex: 1;
   }
-
   .event {
     display: flex;
   }
 
   .left-half {
-    width: 550px;
+    width: 500px;
     margin-right: 10px;
   }
 
   .right-half {
     flex: 1;
+    top: 0;
   }
 
   .demo-table-expand {
@@ -176,13 +236,13 @@
   }
 
   .demo-table-expand label {
-    width: 90px;
+    width: 70px;
     color: #99a9bf;
   }
 
   .demo-table-expand .el-form-item {
     margin-right: 0;
     margin-bottom: 0;
-    width: 50%;
+    width: 45%;
   }
 </style>

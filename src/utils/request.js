@@ -2,8 +2,8 @@ import axios from 'axios'
 
 const request = axios.create({
   // 通用请求的地址前缀
-//   baseURL: 'http://localhost:5000/api',
   baseURL: '/api',
+//   baseURL: 'http://172.20.137.248:5000/api',
   timeout: 10000 // 超时时间
 })
 

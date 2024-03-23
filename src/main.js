@@ -8,6 +8,8 @@ import router from './router'
 import store from './store'
 import App from './App.vue'
 import '@/api/mock'
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 // 使用element的插件
 Vue.use(ElementUI)

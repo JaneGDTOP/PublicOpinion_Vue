@@ -13,3 +13,8 @@ export const sendEvent = (data) => {
 export const searchPicture = (data) => {
   return request.post('/search', data)
 }
+
+// 关系抽取接口
+export const sendTextRelation = (data) => {
+  return request.post('/process', data)
+}

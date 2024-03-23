@@ -17,4 +17,4 @@ Mock.mock('/api/user/batchRemove', 'post', user.batchremove)
 Mock.mock('/api/user/updateUser', 'post', user.updateUser)
 // 判断用户权限
 // Mock.mock('http://localhost:5000/api/permission/getMenu','post',permission.getMenu)
-Mock.mock('/api/permission/getMenu','post',permission.getMenu)
+Mock.mock('/api/permission/getMenu', 'post', permission.getMenu)

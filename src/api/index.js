@@ -27,7 +27,7 @@ export const deleteUser = (data) => {
 export const getMenu = (data) => {
   return request.post('/permission/getMenu', data)
 }
-//多模态事件抽取api
+// 多模态事件抽取api
 // export const sendText = (data) => {
 //   return request.post('/send', data)
 // }

@@ -13,3 +13,10 @@ export const sendEvent = (data) => {
 export const searchPicture = (data) => {
   return request.post('/search', data)
 }
+export const upload = (data) => {
+  console.log("data", data)
+  return request.post('/uploadImage', data)
+}
+export const sendMultiData = (data) => {
+  return request.post('/sendMultiData', data)
+}

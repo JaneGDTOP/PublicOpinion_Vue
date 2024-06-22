@@ -19,4 +19,8 @@ export const upload = (data) => {
 }
 export const sendMultiData = (data) => {
   return request.post('/sendMultiData', data)
+
+// 关系抽取接口
+export const sendTextRelation = (data) => {
+  return request.post('/process', data)
 }

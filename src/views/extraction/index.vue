@@ -87,12 +87,12 @@
                     <el-form-item label="事件类型">
                       <span>{{ content }}</span>
                     </el-form-item>
-                    <el-form-item
+                    <!-- <el-form-item
                       label="事件类型描述"
                       style="white-space: nowrap"
                     >
                       <span>it occurs when two or more people interact</span>
-                    </el-form-item>
+                    </el-form-item> -->
                   </el-form>
                 </el-col>
               </el-row>

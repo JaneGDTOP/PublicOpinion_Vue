@@ -26,28 +26,28 @@ export default {
             {
               path: '/extraction',
               name: 'extraction', // 命名路由
-              label: '事件抽取',
+              label: '事件抽取（3.2）',
               icon: 's-home',
               url: 'extraction/index.vue'
             },
             {
               path: '/relation',
               name: 'relation', // 命名路由
-              label: '关系抽取',
+              label: '关系抽取（3.4）',
               icon: 's-home',
               url: 'relation/index.vue'
             },
             {
               path: '/fusion',
               name: 'fusion', // 命名路由
-              label: '表征融合',
+              label: '表征融合（3.5）',
               icon: 's-home',
               url: 'fusion/index.vue'
             },
             {
               path: '/knowledge',
               name: 'knowledge', // 命名路由
-              label: '知识图谱',
+              label: '知识图谱（3.3）',
               icon: 's-home',
               url: 'knowledge/index.vue'
             },

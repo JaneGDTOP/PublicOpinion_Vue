@@ -254,15 +254,15 @@ export default {
   option: [
     {
       value: 'MATCH (n:entity) RETURN n LIMIT 300',
-      label: '检索前300个实体节点'
+      label: '检索文本节点'
     },
     {
       value: 'MATCH (n:sentence) RETURN n LIMIT 100',
-      label: '检索100个实体节点'
+      label: '检索图像节点'
     },
     {
       value: 'MATCH p = (s1:sentence)-[r]-() RETURN p LIMIT 100',
-      label: '检索前100个实体节点'
+      label: '隐性节点关系挖掘'
     }
   ]
 }
